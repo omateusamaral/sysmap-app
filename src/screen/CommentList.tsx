@@ -40,7 +40,7 @@ export function CommentList(route: unknown) {
   }, [props.route.params.postId]);
   return (
     <Background>
-      <View style={styles.footer}>
+      <View style={styles.goBack}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back-outline" size={32} color="white" />
         </TouchableOpacity>

@@ -2,8 +2,8 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import React, { useCallback } from "react";
-import { SafeAreaView } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
 SplashScreen.preventAutoHideAsync();
 
@@ -23,15 +23,10 @@ export default function App() {
   }
   return (
     <PaperProvider>
-      <SafeAreaView
-        style={{
-          flex: 1,
-        }}
-        onLayout={onLayoutRootView}
-      >
+      <SafeAreaProvider onLayout={onLayoutRootView}>
         <Navigation />
-      </SafeAreaView>
-      <StatusBar style="light" />
+        <StatusBar style="light" />
+      </SafeAreaProvider>
     </PaperProvider>
   );
 }

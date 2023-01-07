@@ -1,7 +1,7 @@
 import { Fontisto } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import { useAsyncCallback } from "react-async-hook";
-import { FlatList, StatusBar, View } from "react-native";
+import { FlatList, Platform, StatusBar, View } from "react-native";
 import { Text } from "react-native-paper";
 import { listPosts } from "../api";
 import Background from "../components/common/Background";
@@ -22,7 +22,10 @@ export function PostList() {
     <Background>
       <View
         style={{
-          marginTop: StatusBar.currentHeight,
+          marginTop:
+            Platform.OS === "android"
+              ? StatusBar.currentHeight
+              : Number(StatusBar.currentHeight) * 100 + 50,
           alignItems: "center",
         }}
       >

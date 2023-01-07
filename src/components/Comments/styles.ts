@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet } from "react-native";
+import { Platform, StatusBar, StyleSheet } from "react-native";
 import Layout from "../../global/Layout";
 export const styles = StyleSheet.create({
   container: {
@@ -33,11 +33,14 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     width: Layout.window.width * 0.8,
   },
-  footer: {
+  goBack: {
     flexDirection: "row",
     alignContent: "center",
     paddingHorizontal: 20,
     paddingVertical: 5,
-    marginTop: StatusBar.currentHeight,
+    marginTop:
+      Platform.OS === "android"
+        ? StatusBar.currentHeight
+        : Number(StatusBar.currentHeight) * 100 + 50,
   },
 });
