@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
 import { MD3LightTheme } from "react-native-paper";
+import Layout from "../../../global/Layout";
 import { theme } from "../../../global/styles/theme";
 export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    width: "100%",
+    width: Layout.window.width,
     alignItems: "center",
     paddingHorizontal: 24,
     paddingBottom: 24,
@@ -12,7 +13,6 @@ export const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: "center",
-    marginLeft: 20,
   },
   header: {
     backgroundColor: theme.colors.secondary85,

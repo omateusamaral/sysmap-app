@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Comments } from "../components/comments";
+import { CommentList } from "../components/Comments";
 import { Posts } from "../components/posts";
 export type RootStackParamList = {
   Posts: undefined;
@@ -15,7 +15,7 @@ function RootNavigator() {
       <Stack.Screen name="Posts" component={Posts} />
       <Stack.Screen
         name="Comments"
-        component={Comments}
+        component={CommentList}
         initialParams={{
           postId: 0,
         }}
