@@ -11,8 +11,9 @@ interface PostItemProps {
   title: string;
   content: string;
   postId: number;
+  userId: number;
 }
-function PostItem({ title, content, postId }: PostItemProps) {
+function PostItem({ title, content, postId, userId }: PostItemProps) {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
@@ -43,6 +44,7 @@ function PostItem({ title, content, postId }: PostItemProps) {
             onPress={() =>
               navigation.navigate("Comments", {
                 postId,
+                userId: userId,
               })
             }
           >

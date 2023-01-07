@@ -20,7 +20,7 @@ export async function listUsers(): Promise<User[]> {
   }
 }
 
-export async function getUser(userId: string): Promise<User> {
+export async function getUser(userId: number): Promise<User> {
   try {
     const instance = createInstance();
     const response = await instance.get(`/users/${userId}`);

@@ -1,11 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { CommentList } from "../components/Comments";
-import { PostList } from "../components/posts";
+import { CommentList } from "../screen/CommentList";
+import { PostList } from "../screen/PostList";
 export type RootStackParamList = {
   Posts: undefined;
   Comments: {
     postId: number;
+    userId: number;
   };
 };
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -18,6 +19,7 @@ function RootNavigator() {
         component={CommentList}
         initialParams={{
           postId: 0,
+          userId: 0,
         }}
       />
     </Stack.Navigator>

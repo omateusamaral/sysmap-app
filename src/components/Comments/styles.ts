@@ -8,6 +8,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingBottom: 24,
   },
+  header: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: Layout.window.width,
+  },
   content: {
     flexDirection: "row",
     alignItems: "center",

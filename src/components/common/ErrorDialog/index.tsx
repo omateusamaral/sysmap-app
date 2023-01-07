@@ -13,7 +13,7 @@ export function ErrorDialog({ error, hideDialog }: ErrorDialogProps) {
           <Text variant="bodyMedium">An error ocurred, please try again</Text>
         </Dialog.Content>
         <Dialog.Actions>
-          <Button onPress={hideDialog}>Close</Button>
+          <Button onPress={hideDialog}>Fechar</Button>
         </Dialog.Actions>
       </Dialog>
     </Portal>
