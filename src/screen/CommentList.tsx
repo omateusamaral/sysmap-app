@@ -73,7 +73,6 @@ export function CommentList(route: unknown) {
             renderItem={({ item }) => (
               <>
                 <CommentItem name={item.name} body={item.body} />
-                <Divider />
               </>
             )}
             showsVerticalScrollIndicator={false}
@@ -81,6 +80,7 @@ export function CommentList(route: unknown) {
             snapToAlignment="start"
             decelerationRate="fast"
             ListEmptyComponent={EmptyList}
+            ItemSeparatorComponent={() => <Divider />}
           />
         </>
       )}

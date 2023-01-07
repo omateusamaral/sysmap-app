@@ -5,12 +5,12 @@ import { getUser } from "../../api";
 import { ErrorDialog } from "../common/ErrorDialog";
 import { Loader } from "../common/Loader";
 
-export interface ShowUserProps {
+export interface UserDialogProps {
   userId: number;
   visible: boolean;
   hideModal: () => void;
 }
-export function UserDialog({ userId, visible, hideModal }: ShowUserProps) {
+export function UserDialog({ userId, visible, hideModal }: UserDialogProps) {
   const getUserCallback = useAsyncCallback(getUser);
   useEffect(() => {
     getUserCallback.execute(userId);

@@ -24,7 +24,8 @@ export const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: theme.colors.secondary70,
-    padding: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
     borderBottomLeftRadius: MD3LightTheme.roundness,
     borderBottomRightRadius: MD3LightTheme.roundness,
   },
