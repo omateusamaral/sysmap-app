@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { memo } from "react";
 import { View } from "react-native";
 import { Text } from "react-native-paper";
 import { theme } from "../../global/styles/theme";
@@ -7,7 +8,7 @@ interface CommentItemProps {
   name: string;
   body: string;
 }
-export function CommentItem({ name, body }: CommentItemProps) {
+function CommentItem({ name, body }: CommentItemProps) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -40,3 +41,5 @@ export function CommentItem({ name, body }: CommentItemProps) {
     </View>
   );
 }
+
+export default memo(CommentItem);

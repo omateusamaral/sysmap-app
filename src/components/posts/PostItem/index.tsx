@@ -1,6 +1,7 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { memo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { theme } from "../../../global/styles/theme";
@@ -11,7 +12,7 @@ interface PostItemProps {
   content: string;
   postId: number;
 }
-export function PostItem({ title, content, postId }: PostItemProps) {
+function PostItem({ title, content, postId }: PostItemProps) {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
@@ -56,3 +57,5 @@ export function PostItem({ title, content, postId }: PostItemProps) {
     </View>
   );
 }
+
+export default memo(PostItem);

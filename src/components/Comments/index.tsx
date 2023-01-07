@@ -8,7 +8,7 @@ import { Divider } from "react-native-paper";
 import { listComments } from "../../api";
 import { RootStackParamList } from "../../navigation";
 import Background from "../common/Background";
-import { CommentItem } from "./CommentItem";
+import CommentItem from "./CommentItem";
 import { styles } from "./styles";
 export function CommentList(route: unknown) {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();

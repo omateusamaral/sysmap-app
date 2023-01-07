@@ -7,9 +7,9 @@ import { listPosts } from "../../api";
 import { theme } from "../../global/styles/theme";
 import Background from "../common/Background";
 import { ErrorDialog } from "../common/ErrorDialog";
-import { PostItem } from "./PostItem";
+import PostItem from "./PostItem";
 
-export function Posts() {
+export function PostList() {
   const listPostsCallback = useAsyncCallback(listPosts);
 
   useEffect(() => {
