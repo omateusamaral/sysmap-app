@@ -8,6 +8,8 @@ import { Divider } from "react-native-paper";
 import { listComments } from "../../api";
 import { RootStackParamList } from "../../navigation";
 import Background from "../common/Background";
+import { EmptyList } from "../common/EmptyList";
+import { ErrorDialog } from "../common/ErrorDialog";
 import CommentItem from "./CommentItem";
 import { styles } from "./styles";
 export function CommentList(route: unknown) {
@@ -44,6 +46,11 @@ export function CommentList(route: unknown) {
         contentContainerStyle={{ paddingBottom: 10, paddingTop: 50 }}
         snapToAlignment="start"
         decelerationRate="fast"
+        ListEmptyComponent={EmptyList}
+      />
+      <ErrorDialog
+        error={listCommentsCallback.error}
+        hideDialog={listCommentsCallback.reset}
       />
     </Background>
   );

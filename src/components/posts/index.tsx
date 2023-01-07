@@ -6,6 +6,7 @@ import { Text } from "react-native-paper";
 import { listPosts } from "../../api";
 import { theme } from "../../global/styles/theme";
 import Background from "../common/Background";
+import { EmptyList } from "../common/EmptyList";
 import { ErrorDialog } from "../common/ErrorDialog";
 import PostItem from "./PostItem";
 
@@ -43,6 +44,7 @@ export function PostList() {
         contentContainerStyle={{ paddingBottom: 69, paddingTop: 50 }}
         snapToAlignment="start"
         decelerationRate="fast"
+        ListEmptyComponent={EmptyList}
       />
       <ErrorDialog
         error={listPostsCallback.error}
