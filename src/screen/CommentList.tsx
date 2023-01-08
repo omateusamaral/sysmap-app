@@ -71,9 +71,7 @@ export function CommentList(route: unknown) {
             data={listCommentsCallback.result ?? []}
             keyExtractor={(item) => `${item.id}`}
             renderItem={({ item }) => (
-              <>
-                <CommentItem name={item.name} body={item.body} />
-              </>
+              <CommentItem name={item.name} body={item.body} key={item.id} />
             )}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingBottom: 10, paddingTop: 50 }}
